@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import UIKit
+
+class ThirdScreenViewController: UIViewController {
+    
+    var thirdScreenPresenter: ThirdScreenPresenter?
+    @IBOutlet private weak var helpMeLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    private func getText() {
+        
+    }
+}

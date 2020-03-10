@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import UIKit
+
+class SecondScreenViewController: UIViewController {
+    
+    @IBOutlet weak var nameTextField: UILabel!
+    @IBOutlet weak var emailTextField: UILabel!
+    var secondScreenPresenter: SecondScreenPresenter?
+    var name: String?
+    var email: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLayout()
+    }
+    
+    private func setupLayout() {
+        emailTextField.text = secondScreenPresenter?.getInfo().email
+        nameTextField.text = secondScreenPresenter?.getInfo().name
+    }
+}

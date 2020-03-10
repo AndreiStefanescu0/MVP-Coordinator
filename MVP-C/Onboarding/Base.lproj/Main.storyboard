@@ -29,7 +29,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abl-CE-w8R">
-                                <rect key="frame" x="179.5" y="259" width="55" height="35"/>
+                                <rect key="frame" x="179.5" y="617" width="55" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Check">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,21 +38,39 @@
                                     <action selector="didTapCheckButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xGf-g8-7r0"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4h5-UD-rdk">
+                                <rect key="frame" x="117" y="234" width="180" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcz-eZ-8hM">
+                                <rect key="frame" x="191" y="154" width="32" height="30"/>
+                                <state key="normal" title="Help"/>
+                                <connections>
+                                    <action selector="didTapHelpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yne-Be-999"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yN6-lM-Wmp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="77E-kj-m3W"/>
+                            <constraint firstItem="Tcz-eZ-8hM" firstAttribute="centerX" secondItem="4h5-UD-rdk" secondAttribute="centerX" id="GeJ-zo-RTd"/>
+                            <constraint firstItem="4h5-UD-rdk" firstAttribute="trailing" secondItem="yN6-lM-Wmp" secondAttribute="trailing" id="HGw-dl-h37"/>
                             <constraint firstItem="Abl-CE-w8R" firstAttribute="centerX" secondItem="6xF-gh-TWs" secondAttribute="centerX" id="Sdp-gv-9db"/>
+                            <constraint firstItem="yN6-lM-Wmp" firstAttribute="top" secondItem="4h5-UD-rdk" secondAttribute="bottom" constant="56" id="Tv3-ew-d1Q"/>
                             <constraint firstItem="6xF-gh-TWs" firstAttribute="leading" secondItem="yN6-lM-Wmp" secondAttribute="leading" id="byB-yd-bX9"/>
+                            <constraint firstItem="4h5-UD-rdk" firstAttribute="top" secondItem="Tcz-eZ-8hM" secondAttribute="bottom" constant="50" id="c1i-4P-6IP"/>
+                            <constraint firstItem="4h5-UD-rdk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="190" id="csN-SK-2jQ"/>
                             <constraint firstItem="6xF-gh-TWs" firstAttribute="trailing" secondItem="yN6-lM-Wmp" secondAttribute="trailing" id="dP4-pi-PDz"/>
-                            <constraint firstItem="yN6-lM-Wmp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="280" id="g9m-5a-iRb"/>
-                            <constraint firstItem="yN6-lM-Wmp" firstAttribute="top" secondItem="Abl-CE-w8R" secondAttribute="bottom" constant="30" id="k4n-W3-yLB"/>
+                            <constraint firstItem="4h5-UD-rdk" firstAttribute="leading" secondItem="yN6-lM-Wmp" secondAttribute="leading" id="mNk-Dl-rlW"/>
                             <constraint firstItem="6xF-gh-TWs" firstAttribute="top" secondItem="yN6-lM-Wmp" secondAttribute="bottom" constant="45" id="o6b-Sj-M6Z"/>
+                            <constraint firstItem="Abl-CE-w8R" firstAttribute="top" secondItem="6xF-gh-TWs" secondAttribute="bottom" constant="180" id="vK1-cI-snR"/>
                             <constraint firstItem="6xF-gh-TWs" firstAttribute="centerX" secondItem="yN6-lM-Wmp" secondAttribute="centerX" id="xi5-KA-5MQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="4h5-UD-rdk" id="fZs-6C-Hc6"/>
                         <outlet property="nameTextField" destination="yN6-lM-Wmp" id="I6e-WQ-Qkd"/>
                         <outlet property="passwordTextField" destination="6xF-gh-TWs" id="h7E-bs-9OK"/>
                     </connections>
@@ -75,16 +93,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qp-Nv-zAg">
+                                <rect key="frame" x="186" y="488" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9J5-gs-Erl" firstAttribute="centerX" secondItem="2TM-IW-Wa3" secondAttribute="centerX" id="2lh-Qr-oGw"/>
+                            <constraint firstItem="4qp-Nv-zAg" firstAttribute="top" secondItem="9J5-gs-Erl" secondAttribute="bottom" constant="24.5" id="HA1-0F-mpn"/>
+                            <constraint firstItem="4qp-Nv-zAg" firstAttribute="centerX" secondItem="9J5-gs-Erl" secondAttribute="centerX" id="UpW-Ur-1l9"/>
                             <constraint firstItem="9J5-gs-Erl" firstAttribute="centerY" secondItem="2TM-IW-Wa3" secondAttribute="centerY" id="cIB-ja-PpW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2TM-IW-Wa3"/>
                     </view>
                     <connections>
-                        <outlet property="infoLabel" destination="9J5-gs-Erl" id="vP4-hy-QJk"/>
+                        <outlet property="emailTextField" destination="9J5-gs-Erl" id="Cgx-Uq-Pbc"/>
+                        <outlet property="nameTextField" destination="4qp-Nv-zAg" id="2sc-0L-hYS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rI-sF-08d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -99,8 +126,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWx-sE-ykn">
-                                <rect key="frame" x="188" y="442.5" width="38" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name : bla , password: bla" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzt-Jn-m3W">
+                                <rect key="frame" x="108" y="443" width="198" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -108,15 +135,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="OWx-sE-ykn" firstAttribute="centerY" secondItem="C8i-C3-eIK" secondAttribute="centerY" id="4KW-4r-LPY"/>
-                            <constraint firstItem="OWx-sE-ykn" firstAttribute="centerX" secondItem="C8i-C3-eIK" secondAttribute="centerX" id="5pO-et-c0a"/>
+                            <constraint firstItem="yzt-Jn-m3W" firstAttribute="centerY" secondItem="C8i-C3-eIK" secondAttribute="centerY" id="xtI-fe-qoa"/>
+                            <constraint firstItem="yzt-Jn-m3W" firstAttribute="centerX" secondItem="C8i-C3-eIK" secondAttribute="centerX" id="zsC-Ip-xhX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C8i-C3-eIK"/>
                     </view>
+                    <connections>
+                        <outlet property="helpMeLabel" destination="yzt-Jn-m3W" id="34E-at-WrH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLB-eQ-2Gv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="135"/>
+            <point key="canvasLocation" x="1913.0434782608697" y="134.59821428571428"/>
         </scene>
     </scenes>
 </document>

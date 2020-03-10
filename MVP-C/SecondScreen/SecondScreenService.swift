@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class SecondScreenService {
+    
+    func getTrafficLight(colorName:(String), callBack:(User?) -> Void) {
+   
+    }
+}
